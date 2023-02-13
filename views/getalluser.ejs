@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>User List</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .action-button {
+      background-color: #008CBA;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 5px 10px;
+      text-decoration: none;
+    }
+
+    .action-button:hover {
+      background-color: #00698C;
+    }
+
+    a {
+      text-decoration: none;
+      border: 1px solid #4CAF50;
+      background-color: rgb(169, 212, 223);
+    }
+
+    form {
+      display: inline-block;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+    align-items: center;
+    }
+    .sideheader{
+padding: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>User managment dashboard</h1>
+    <a class="sideheader" href="/newuser"> Add new user</a>
+
+  </div>
+
+  <table>
+    <tr>
+      <th>Username</th>
+      <th>Gmail</th>
+      <th>Action</th>
+    </tr>
+
+    <% result.forEach(function(ele){ %>
+      <tr>
+        <td>
+          <%= ele.name %>
+        </td>
+        <td>
+          <%= ele.email %>
+        </td>
+        <td>
+         
+            <a href="/edituser/<%=ele.id%>">Edit</a>
+          
+          <form action="/delete/<%=ele.id%>" method="post">
+            <input  style="background-color: rgba(255, 0, 0, 0.747); cursor: pointer;" type="submit" value="delete">
+          </form>
+
+          <a href="/getone/<%= ele.id%>">View</a>
+
+
+
+
+        </td>
+      </tr>
+
+      <% })%>
+
+  </table>
+
+</body>
+
+</html>

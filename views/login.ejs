@@ -1,0 +1,36 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Registration Form</title>
+    <style>
+         form {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      margin: 0 auto;
+      }
+    label, input {
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+  
+
+
+    <h1>Welcome </h1>
+    <form method="post"  action="/login" method="post">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+   
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+       
+        <button type="submit" class="btn btn-dark">submit</button> <br>
+        <a href="/newuser"> new user </a>
+    </form>
+</body>
+</html>
